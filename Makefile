@@ -1,11 +1,11 @@
 PARROT = parrot
 
-run: test.pir
-	$(PARROT) test.pir
+run: builtins.pbc test.pbc
+	$(PARROT) test.pbc
 
-compile: test.pir
-	$(PARROT) -o test.pbc test.pir
+%.pbc: %.pir
+	$(PARROT) -o $@ $^
 
 clean:
-	rm -vf test.pbc
+	rm -vf *.pbc
 
