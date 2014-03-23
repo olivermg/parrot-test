@@ -1,6 +1,6 @@
 PARROT = parrot
 
-run: builtins.pbc test.pbc
+run: builtins.pbc lambda.pbc test.pbc
 	$(PARROT) test.pbc
 
 %.pbc: %.pir
