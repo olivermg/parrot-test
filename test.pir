@@ -10,19 +10,26 @@
 	load_bytecode "lambda.pbc"
 
 	say "hello world, kraak!"
+	say ""
 
 	.local string myvar
 
 	myvar = "kraak, local variable!"
 	say myvar
+	say ""
 
+	# call function:
 	$I0 = myfunc(22)
+
+	# call function from different .pbc file:
 	$I1 = myadd($I0, 33)
 	say $I1
+	say ""
 
-	$P0 = 'lambda1'()
+	# create closure and call it:
+	$P0 = 'lambda1'(101)
 	say $P0
-	$I2 = $P0(1, 2)
-	say $I2
+	$P1 = $P0(11, 22)
+	say $P1
 .end
 
